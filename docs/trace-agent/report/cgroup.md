@@ -27,7 +27,6 @@
 | controllers     | repeated string             | cgroup.controllers     |
 | events          | [CGroupEvent](#cgroupevent) | cgroup.events          |
 | freeze          | int32                       | cgroup.freeze          |
-| kill            | int32                       | cgroup.kill            |
 | max_depth       | oneof                       | cgroup.max.depth       |
 | max_descendants | oneof                       | cgroup.max.descendants |
 | pressure        | int32                       | cgroup.pressure        |
@@ -159,27 +158,27 @@
 
 #### CGroupIOMax
 
-| 字段  | 类型         | 描述  |
-| ----- | ------------ | ----- |
-| major | int32        | major |
-| minor | int32        | minor |
-| rbps  | int32/string | rbps  |
-| wbps  | int32/string | wbps  |
-| riops | int32/string | riops |
-| wiops | int32/string | wiops |
+| 字段  | 类型         | 描述                 |
+| ----- | ------------ | -------------------- |
+| major | int32        | 主设备号             |
+| minor | int32        | 次设备号             |
+| rbps  | int32/string | 每秒最大读取速度     |
+| wbps  | int32/string | 每秒最大写入速度     |
+| riops | int32/string | 每秒最大读取操作次数 |
+| wiops | int32/string | 每秒最大写入操作次数 |
 
 #### CGroupIOStat
 
-| 字段        | 类型  | 描述        |
-| ----------- | ----- | ----------- |
-| MajorDevice | int32 | MajorDevice |
-| MinorDevice | int32 | MinorDevice |
-| rbytes      | int64 | rbytes      |
-| wbytes      | int64 | wbytes      |
-| rios        | int64 | rios        |
-| wios        | int64 | wios        |
-| dbytes      | int64 | dbytes      |
-| dios        | int64 | dios        |
+| 字段        | 类型  | 描述         |
+| ----------- | ----- | ------------ |
+| MajorDevice | int32 | 主设备号     |
+| MinorDevice | int32 | 次设备号     |
+| rbytes      | int64 | 读取字节数量 |
+| wbytes      | int64 | 写入字节数量 |
+| rios        | int64 | 读取操作次数 |
+| wios        | int64 | 写入操作次数 |
+| dbytes      | int64 | 丢弃字节数量 |
+| dios        | int64 | 丢弃读写次数 |
 
 ### CGroupMemoryController
 
